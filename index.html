@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfredo S. Wilde | CS Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#about" class="nav-item active">About</a>
+            <a href="#skills" class="nav-item">Skills</a>
+            <a href="#education" class="nav-item">Education</a>
+            <a href="#experience" class="nav-item">Experience</a>
+            <a href="#contact" class="nav-item">Contact</a>
+            <button id="theme-toggle">🌙</button>
+
+        </div>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        <!-- About Section -->
+        <section id="about" class="content-section active">
+            <div class="profile-card">
+                <div class="profile-image-container">
+                    <img src="data/profile.jpeg" alt="Alfredo S. Wilde" class="profile-image">
+                </div>
+                <div class="profile-content">
+                    <h1 class="name">Alfredo S. Wilde</h1>
+                    <p class="title">Computer Science Engineer</p>
+                    <div class="divider"></div>
+                    <p class="bio">Building intelligent solutions through elegant code and systematic thinking.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="content-section">
+            <div class="skills-container">
+                <h2 class="section-title">Capabilities</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3 class="skill-category">Development</h3>
+                        <ul class="skill-list">
+                            <li>Python</li>
+                            <li>JavaScript/TypeScript</li>
+                            <li>Cloud Architecture</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-category">Systems</h3>
+                        <ul class="skill-list">
+                            <li>Linux Environments</li>
+                            <li>Database Design</li>
+                            <li>APIs & Microservices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+
+        <section id="education" class="content-section">
+            <div class="education-container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <h3>Master of Science in Computer Engineering</h3>
+                        <p class="education-meta">Stanford University · 2018–2020</p>
+                        <p class="education-desc">Focus on advanced algorithms and distributed systems</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Bachelor of Computer Science</h3>
+                        <p class="education-meta">MIT · 2014–2018</p>
+                        <p class="education-desc">Graduated summa cum laude</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="content-section">
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="--timeline-color: rgba(9, 132, 227, 1);"></div>
+                    <div class="timeline-content">
+                        <h3>Tech Lead · FutureCorp</h3>
+                        <p class="timeline-date">2020–Present</p>
+                        <p>Leading cross-functional teams in building scalable enterprise solutions.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="--timeline-color: rgba(9, 132, 227, 0.8);"></div>
+                    <div class="timeline-content">
+                        <h3>Senior Developer · InnovateTech</h3>
+                        <p class="timeline-date">2017–2020</p>
+                        <p>Developed and maintained high-traffic web applications.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="--timeline-color: rgba(9, 132, 227, 0.6);"></div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer · CodeCraft</h3>
+                        <p class="timeline-date">2015–2017</p>
+                        <p>Collaborated on backend systems and API integrations.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="--timeline-color: rgba(9, 132, 227, 0.4);"></div>
+                    <div class="timeline-content">
+                        <h3>Junior Developer · StartUp Labs</h3>
+                        <p class="timeline-date">2013–2015</p>
+                        <p>Assisted in building prototypes and testing new features.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="content-section">
+            <div class="contact-container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p><a>contact.me.unsaid230@passinbox.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🔗</div>
+                        <h3>Social</h3>
+                        <p>
+                            <a href="https://www.linkedin.com/in/alfredo-s-wilde/" target="_blank">LinkedIn</a> /
+                            <a href="https://github.com/guilot?tab=repositories" target="_blank">GitHub</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

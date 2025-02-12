@@ -1,0 +1,445 @@
+/* styles.css */
+:root {
+    --primary: #2d3436;
+    --secondary: #636e72;
+    --accent: #0984e3;
+    --background: #ffffff;
+    --surface: #f8f9fa;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--primary);
+    background-color: var(--background);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nav-container {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    background: var(--background);
+    z-index: 100;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.profile-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.profile-image-container {
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.profile-image {
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: var(--primary);
+}
+
+.title {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    margin: 0 0 2rem;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 2rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-card {
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 8px;
+}
+
+.skill-category {
+    margin: 0 0 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    padding: 0.5rem 0;
+    color: var(--secondary);
+}
+
+/* Skills Section Enhancements */
+.skills-grid {
+    /* Keep existing styles */
+    perspective: 1000px; /* For 3D effect */
+}
+
+.skill-card {
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    cursor: default;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px) rotateX(5deg);
+    box-shadow: 0 8px 24px rgba(9, 132, 227, 0.1);
+}
+
+.skill-list li {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease-out;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+/* Animate list items when section is visible */
+.skills-container.active .skill-list li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add media query for mobile */
+@media (max-width: 768px) {
+    .skill-card:hover {
+        transform: none; /* Disable 3D effect on mobile */
+    }
+}
+
+/* Education Section Styles */
+.education-container {
+    max-width: 800px;
+    margin: 0;
+}
+
+.education-list {
+    margin-top: 2rem;
+}
+
+.education-item {
+    background: var(--surface);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease-out;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 1.8rem;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.education-item:hover {
+    transform: translateX(10px);
+}
+
+.education-meta {
+    color: var(--secondary);
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.education-desc {
+    color: var(--secondary);
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .education-item {
+        padding: 1.25rem;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .education-item::before {
+        left: 0.75rem;
+        top: 1.5rem;
+    }
+    
+    .education-item:hover {
+        transform: none;
+    }
+}
+
+.timeline {
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 0;
+}
+
+/* Main vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;  /* Center the line */
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        rgba(9, 132, 227, 1),
+        rgba(9, 132, 227, 0.8) 25%,
+        rgba(9, 132, 227, 0.6) 50%,
+        rgba(9, 132, 227, 0.4) 75%
+    );
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    position: relative;
+}
+
+/* Timeline marker positioning */
+.timeline-marker {
+    width: 20px;
+    height: 20px;
+    background: var(--timeline-color);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 3px solid var(--background);
+}
+
+/* Timeline content alignment */
+.timeline-content {
+    padding: 0 2rem;
+}
+
+/* Left-aligned content */
+.timeline-item:nth-child(odd) .timeline-content {
+    grid-column: 1;
+    text-align: right;
+}
+
+/* Right-aligned content */
+.timeline-item:nth-child(even) .timeline-content {
+    grid-column: 3;
+}
+
+/* Connector lines between items */
+.timeline-item::after {
+   display: none;
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+/* Update CSS animations */
+.timeline-item {
+    opacity: 0.3;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    animation: timelineEntry 0.6s ease-out forwards;
+}
+
+.timeline-marker {
+    transition: all 0.3s ease-out;
+}
+
+@keyframes timelineEntry {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.timeline-content {
+    transition: transform 0.3s ease-out;
+}
+
+.timeline-item.visible .timeline-content {
+    transform: translateX(0);
+}
+
+/* For left-aligned items */
+.timeline-item:nth-child(odd).visible .timeline-content {
+    transform: translateX(0);
+}
+
+/* For right-aligned items */
+.timeline-item:nth-child(even).visible .timeline-content {
+    transform: translateX(0);
+}
+
+/* Fix mobile media query duplication */
+@media (max-width: 768px) {
+    .timeline-item {
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-card {
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 8px;
+    transition: transform 0.2s ease-out;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+}
+
+.contact-card a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        text-align: center;
+    }
+}
+
+/* Darker Dark Mode */
+.dark-mode {
+    --primary: #ffffff;  /* White text for better contrast */
+    --secondary: #dcdcdc; /* Light gray for secondary text */
+    --background: #121212; /* True dark mode */
+    --surface: #1e1e1e;  /* Darker surface elements */
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+.dark-mode .nav-container {
+    background: var(--background);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .nav-item {
+    color: var(--secondary);
+}
+
+.dark-mode .nav-item.active {
+    color: var(--primary);
+}
+
+.dark-mode .skill-card,
+.dark-mode .education-item,
+.dark-mode .contact-card {
+    background: var(--surface);
+    color: var(--primary);
+}
+
+.dark-mode .timeline-marker {
+    border: 3px solid var(--surface);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: auto;
+    color: var(--primary);
+}
