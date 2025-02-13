@@ -443,3 +443,8 @@ body {
     margin-left: auto;
     color: var(--primary);
 }
+
+.dark-mode b {
+    color: #3498db;  /* More balanced blue color */
+    font-weight: 700;
+}
