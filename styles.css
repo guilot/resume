@@ -349,6 +349,10 @@ body {
     .timeline-item {
         transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     }
+
+    .timeline::before {
+        display: none; /* Ocultar la barra azul del timeline en móviles */
+    }
 }
 
 .contact-container {
@@ -391,12 +395,21 @@ body {
     text-decoration: underline;
 }
 @media (max-width: 768px) {
+    .contact-container {
+        text-align: left;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
     
     .contact-card {
-        text-align: center;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .contact-card a {
+        font-size: 0.8rem;
     }
 }
 
@@ -447,4 +460,83 @@ body {
 .dark-mode b {
     color: #3498db;  /* More balanced blue color */
     font-weight: 700;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .nav-item {
+        display: none;
+        padding: 0.5rem 1rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    .nav-container.active .nav-item {
+        transform: translateX(0);
+    }
+
+    .nav-container::after {
+        display: none;
+    }
+
+    .profile-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .profile-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 1rem;
+    }
+
+    .education-container,
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .timeline-item {
+        display: flex;
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .timeline-marker {
+        display: none;
+    }
+
+    .timeline-content {
+        padding: 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 1rem;
+        text-align: left;
+    }
 }
