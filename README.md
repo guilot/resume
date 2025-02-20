@@ -49,7 +49,7 @@ This portfolio is designed to be viewed in a web browser. Simply open `index.htm
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+Contributions are welcome! Please see the [CONTRIBUTING.md](./CONTRIBUTING.md) file for detailed guidelines on how to contribute.
 
 ## License
 
